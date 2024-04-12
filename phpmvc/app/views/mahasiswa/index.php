@@ -1,6 +1,13 @@
 <div class="container mt-3">
+
     <div class="row">
-        <div class="col-6">
+        <div class="col-lg-6">
+            <?php Flasher::flash(); ?>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-6">
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#formModal">
         Tambah data Mahasiswa
         </button>
@@ -27,10 +34,10 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="<?= BASEURL; ?>/mahasiswa/tambah" method="post" id="formTambahMahasiswa"> <!-- Perbaikan 1 dan 3 -->
+        <form action="<?= BASEURL; ?>/mahasiswa/tambah" method="post" id="formTambahMahasiswa">
             <div class="form-group">
                 <label for="nama">Nama</label>
-                <input type="text" class="form-control" id="nama" name="nama"> <!-- Perbaikan 5: type="text" -->
+                <input type="text" class="form-control" id="nama" name="nama"> 
             </div>
 
             <div class="form-group">
@@ -54,8 +61,8 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary">Tambah data</button> <!-- Perbaikan 4 -->
-        </form> <!-- Perbaikan 1 -->
+        <button type="submit" class="btn btn-primary">Tambah data</button> 
+        </form> 
       </div>
     </div>
   </div>
