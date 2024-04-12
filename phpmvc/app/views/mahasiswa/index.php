@@ -1,3 +1,5 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 <div class="container mt-3">
 
     <div class="row">
@@ -8,7 +10,7 @@
 
     <div class="row">
         <div class="col-lg-6">
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#formModal">
+        <button type="button" class="btn btn-primary tombolTambahData" data-bs-toggle="modal" data-bs-target="#formModal">
         Tambah data Mahasiswa
         </button>
         <br><br>
@@ -18,6 +20,7 @@
                     <li class="list-group-item">
                         <?= $mhs['nama']; ?>
                         <a href="<?= BASEURL; ?>/mahasiswa/hapus/<?= $mhs['id']; ?>" class="badge text-bg-danger float-end ms-1" onclick="return confirm('Yakin?')">hapus</a>
+                        <a href="<?= BASEURL; ?>/mahasiswa/ubah/<?= $mhs['id']; ?>" class="badge text-bg-success float-end tampilModalUbah ms-1" data-bs-toggle="modal" data-bs-target="#formModal" data-id="<?= $mhs['id']; ?>">ubah</a>
                         <a href="<?= BASEURL; ?>/mahasiswa/detail/<?= $mhs['id']; ?>" class="badge text-bg-primary float-end ms-1">detail</a>
                     </li>
                     <?php endforeach; ?>
@@ -31,11 +34,12 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="judulModal">Tambah Data Mahasiswa</h1>
+        <h1 class="modal-title fs-5" id="formModalLabel">Tambah Data Mahasiswa</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <form action="<?= BASEURL; ?>/mahasiswa/tambah" method="post" id="formTambahMahasiswa">
+        <input type="hidden" name="id" id="id">
             <div class="form-group">
                 <label for="nama">Nama</label>
                 <input type="text" class="form-control" id="nama" name="nama"> 
